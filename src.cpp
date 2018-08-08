@@ -79,6 +79,7 @@ BOOL EjectDll
 
 BOOL InjectTargetProcess
 (
+  LPCTSTR szTargetPath,
   LPCTSTR szDllPath,
   BOOL bInject
 )
@@ -97,7 +98,7 @@ BOOL InjectTargetProcess
 	BOOL bRet = Process32First(hSnapshot, &entry32);
 
 	do {
-		if (_tcsicmp(entry32.szExeFile, TARGET_PROC_NAME) == 0) {
+		if (_tcsicmp(entry32.szExeFile, szTargetPath) == 0) {
 			if (bInject) {
 				InjectDll(entry32.th32ProcessID, szDllPath);
 			} else {
