@@ -1,4 +1,4 @@
-BOOL CUSBwApp::InjectDll
+BOOL InjectDll
 (
 	DWORD dwPID,
 	LPCTSTR szDllPath
@@ -29,7 +29,7 @@ BOOL CUSBwApp::InjectDll
 }
 
 
-BOOL CUSBwApp::EjectDll
+BOOL EjectDll
 (
 	DWORD dwPID,
 	LPCTSTR szDllPath
@@ -77,7 +77,7 @@ BOOL CUSBwApp::EjectDll
 }
 
 
-BOOL CUSBwApp::InjectTargetProcess
+BOOL InjectTargetProcess
 (
   LPCTSTR szDllPath,
   BOOL bInject
